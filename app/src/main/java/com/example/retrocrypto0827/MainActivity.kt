@@ -36,10 +36,10 @@ package com.example.retrocrypto0827
             }
 
             private fun fetchData() {
-                compositeDisposable?.add(jsonApi.getData()
+                compositeDisposable.add(jsonApi.getData()
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe {this::displayData})
+                    .subscribe {displayData(it)})
             }
 
             private fun displayData(cryptoList: List<Crypto>) {
