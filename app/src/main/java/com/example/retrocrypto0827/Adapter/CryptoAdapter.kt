@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.retrocrypto0827.Model.Crypto
 import com.example.retrocrypto0827.R
 
-        class CryptoAdapter(internal val context: Context, internal val postList: List<Crypto>)
+        class CryptoAdapter(private val context: Context, private val cryptoList: List<Crypto>)
             :RecyclerView.Adapter<CryptoViewHolder>()
         {
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CryptoViewHolder {
@@ -17,11 +17,11 @@ import com.example.retrocrypto0827.R
             }
 
             override fun getItemCount(): Int {
-                return postList.size
+                return cryptoList.size
             }
 
             override fun onBindViewHolder(holder: CryptoViewHolder, position: Int) {
-                holder.txtCurrency.text = postList[position].currency.toString()
-                holder.txtPrice.text = postList[position].price.toString()
+                holder.txtCurrency.text = cryptoList[position].currency.toString()
+                holder.txtPrice.text = cryptoList[position].price.toString()
             }
         }

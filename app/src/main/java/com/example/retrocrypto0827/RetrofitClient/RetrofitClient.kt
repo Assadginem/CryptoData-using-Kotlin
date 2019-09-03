@@ -6,20 +6,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
-    private var ourInstance: Retrofit?=null
 
-
-    val instance: Retrofit
-    get(){
-        if(ourInstance == null){
-            ourInstance = Retrofit.Builder()
+    val instance: Retrofit by lazy {
+             Retrofit.Builder()
                 .baseUrl("https://api.nomics.com/v1/")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }
-        return ourInstance!!
     }
-
-
-}

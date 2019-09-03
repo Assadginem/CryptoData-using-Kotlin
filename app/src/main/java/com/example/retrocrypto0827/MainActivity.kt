@@ -15,8 +15,8 @@ package com.example.retrocrypto0827
         class MainActivity : AppCompatActivity() {
 
 
-            internal lateinit var jsonApi: IMyApi
-            internal var compositeDisposable: CompositeDisposable = CompositeDisposable()
+            private lateinit var jsonApi: IMyApi
+            private var compositeDisposable: CompositeDisposable = CompositeDisposable()
 
 
             override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,8 +31,6 @@ package com.example.retrocrypto0827
                 recycler_crypto.layoutManager = LinearLayoutManager(this)
                 recycler_crypto.setHasFixedSize(true)
                 fetchData()
-
-
             }
 
             private fun fetchData() {
@@ -43,11 +41,7 @@ package com.example.retrocrypto0827
             }
 
             private fun displayData(cryptoList: List<Crypto>) {
-
                 val adapter = CryptoAdapter(this, cryptoList)
                 recycler_crypto.adapter = adapter
-
             }
-
-
         }
