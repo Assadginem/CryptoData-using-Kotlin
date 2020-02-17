@@ -6,4 +6,3 @@ Making use of CoinMarketCap API using retrofit and RxJava2
 Displaying basic info from api into a cardview.
 
 
-Abdullah was here.
